@@ -73,11 +73,17 @@ class TableRow extends React.Component<NodeProps> {
 class TableCell extends React.Component<NodeProps> {
     render() {
         const { attributes, children, node } = this.props;
-
         const textAlign = node.get('data').get('align', 'left');
+        const rowSpan = node.get('data').get('rowSpan');
+        const colSpan = node.get('data').get('colSpan');
 
         return (
-            <td style={{ textAlign }} {...attributes}>
+            <td
+                style={{ textAlign }}
+                {...attributes}
+                rowSpan={rowSpan}
+                colSpan={colSpan}
+            >
                 {children}
             </td>
         );
@@ -115,6 +121,8 @@ class Example extends React.Component<*, *> {
             <div className="toolbar">
                 <button onMouseDown={this.onInsertColumn}>Insert Column</button>
                 <button onMouseDown={this.onInsertRow}>Insert Row</button>
+                <button onMouseDown={this.onMergeDown}>Merge Down</button>
+                <button onMouseDown={this.onMergeRight}>Merge Right</button>
                 <button onMouseDown={this.onRemoveColumn}>Remove Column</button>
                 <button onMouseDown={this.onRemoveRow}>Remove Row</button>
                 <button onMouseDown={this.onRemoveTable}>Remove Table</button>
@@ -146,6 +154,7 @@ class Example extends React.Component<*, *> {
     };
 
     onChange = ({ value }) => {
+        console.log(value.toJSON());
         this.setState({
             value
         });
@@ -164,6 +173,16 @@ class Example extends React.Component<*, *> {
     onInsertRow = event => {
         event.preventDefault();
         this.submitChange(tablePlugin.changes.insertRow);
+    };
+
+    onMergeDown = event => {
+        event.preventDefault();
+        this.submitChange(tablePlugin.changes.mergeDown);
+    };
+
+    onMergeRight = event => {
+        event.preventDefault();
+        this.submitChange(tablePlugin.changes.mergeRight);
     };
 
     onRemoveColumn = event => {

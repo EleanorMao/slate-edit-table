@@ -21,9 +21,6 @@
     border: none;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
 
 #example table tr:first-child {
@@ -36,6 +33,5 @@
     border-top: none;
     border-bottom: none;
     border-right: none;
-    flex: 1;
     word-break: break-all;
 }

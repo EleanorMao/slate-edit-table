@@ -27,21 +27,21 @@ export default (
                     <table_cell>
                         <paragraph>Cell 0,1</paragraph>
                     </table_cell>
+                    <table_cell>
+                        <paragraph>Cell 0,2</paragraph>
+                    </table_cell>
                 </table_row>
                 <table_row>
-                    <table_cell>
+                    <table_cell rowSpan={2} colSpan={2}>
                         <paragraph>Cell 1,0</paragraph>
                     </table_cell>
                     <table_cell>
-                        <paragraph>Cell 1,1</paragraph>
+                        <paragraph>Cell 1,2</paragraph>
                     </table_cell>
                 </table_row>
                 <table_row>
                     <table_cell>
-                        <paragraph>Cell 2,0</paragraph>
-                    </table_cell>
-                    <table_cell>
-                        <paragraph>Cell 2,1</paragraph>
+                        <paragraph>Cell 2,2</paragraph>
                     </table_cell>
                 </table_row>
             </table>

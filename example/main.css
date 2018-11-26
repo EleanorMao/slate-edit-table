@@ -19,6 +19,8 @@
 
 #example table tr {
     border: none;
+    height: 20px;
+    line-height: 20px;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
 }
@@ -34,4 +36,6 @@
     border-bottom: none;
     border-right: none;
     word-break: break-all;
+    line-height: 20px;
+    height: 20px;
 }

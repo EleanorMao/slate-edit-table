@@ -40,8 +40,16 @@ export default (
                     </table_cell>
                 </table_row>
                 <table_row>
-                    <table_cell>
+                    <table_cell rowSpan={2}>
                         <paragraph>Cell 2,2</paragraph>
+                    </table_cell>
+                </table_row>
+                <table_row>
+                    <table_cell>
+                        <paragraph>Cell 3,0</paragraph>
+                    </table_cell>
+                    <table_cell>
+                        <paragraph>Cell 3,1</paragraph>
                     </table_cell>
                 </table_row>
             </table>

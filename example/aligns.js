@@ -21,10 +21,12 @@ function setColumnAlign(change: Change, align: string): Change {
     const pos = tablePlugin.utils.getPosition(change.value);
     const columnCells = tablePlugin.utils.getCellsAtColumn(
         pos.table,
-        pos.getColumnIndex()
+        pos.getCellIndex()
     );
     columnCells.forEach(cell => {
-        change.setNodeByKey(cell.key, { data: { align } });
+        change.setNodeByKey(cell.key, {
+            data: { ...cell.get('data').toJSON(), align }
+        });
     });
     return change;
 }

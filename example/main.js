@@ -121,8 +121,22 @@ class Example extends React.Component<*, *> {
             <div className="toolbar">
                 <button onMouseDown={this.onInsertColumn}>Insert Column</button>
                 <button onMouseDown={this.onInsertRow}>Insert Row</button>
-                <button onMouseDown={this.onMergeDown}>Merge Down</button>
-                <button onMouseDown={this.onMergeRight}>Merge Right</button>
+                <button
+                    onMouseDown={this.onMergeDown}
+                    disabled={
+                        !tablePlugin.utils.canCellMergeDown(this.state.value)
+                    }
+                >
+                    Merge Down
+                </button>
+                <button
+                    onMouseDown={this.onMergeRight}
+                    disabled={
+                        !tablePlugin.utils.canCellMergeRight(this.state.value)
+                    }
+                >
+                    Merge Right
+                </button>
                 <button onMouseDown={this.onRemoveColumn}>Remove Column</button>
                 <button onMouseDown={this.onRemoveRow}>Remove Row</button>
                 <button onMouseDown={this.onRemoveTable}>Remove Table</button>

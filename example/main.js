@@ -137,6 +137,11 @@ class Example extends React.Component<*, *> {
                 >
                     Merge Right
                 </button>
+                <button onMouseDown={this.onSplitToRows}>Split To Rows</button>
+                <button onMouseDown={this.onSplitToCols}>Split To Cols</button>
+                <button onMouseDown={this.onSplitToCells}>
+                    Split To Cells
+                </button>
                 <button onMouseDown={this.onRemoveColumn}>Remove Column</button>
                 <button onMouseDown={this.onRemoveRow}>Remove Row</button>
                 <button onMouseDown={this.onRemoveTable}>Remove Table</button>
@@ -197,6 +202,21 @@ class Example extends React.Component<*, *> {
     onMergeRight = event => {
         event.preventDefault();
         this.submitChange(tablePlugin.changes.mergeRight);
+    };
+
+    onSplitToRows = event => {
+        event.preventDefault();
+        this.submitChange(tablePlugin.changes.splitToRows);
+    };
+
+    onSplitToCols = event => {
+        event.preventDefault();
+        this.submitChange(tablePlugin.changes.splitToCols);
+    };
+
+    onSplitToCells = event => {
+        event.preventDefault();
+        this.submitChange(tablePlugin.changes.splitToCells);
     };
 
     onRemoveColumn = event => {

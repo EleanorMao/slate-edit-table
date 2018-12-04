@@ -27,17 +27,6 @@ export default (
                         <paragraph>Col 2, Row 1</paragraph>
                     </table_cell>
                 </table_row>
-                <table_row>
-                    <table_cell>
-                        <paragraph />
-                    </table_cell>
-                    <table_cell>
-                        <paragraph />
-                    </table_cell>
-                    <table_cell>
-                        <paragraph />
-                    </table_cell>
-                </table_row>
             </table>
         </document>
     </value>

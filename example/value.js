@@ -22,34 +22,35 @@ export default (
             <table>
                 <table_row>
                     <table_cell>
-                        <paragraph>Cell 0,0</paragraph>
+                        <paragraph>Col 0, Row 0</paragraph>
                     </table_cell>
                     <table_cell>
-                        <paragraph>Cell 0,1</paragraph>
+                        <paragraph>Col 1, Row 0</paragraph>
                     </table_cell>
                     <table_cell>
-                        <paragraph>Cell 0,2</paragraph>
-                    </table_cell>
-                </table_row>
-                <table_row>
-                    <table_cell rowSpan={2} colSpan={2}>
-                        <paragraph>Cell 1,0</paragraph>
-                    </table_cell>
-                    <table_cell>
-                        <paragraph>Cell 1,2</paragraph>
-                    </table_cell>
-                </table_row>
-                <table_row>
-                    <table_cell rowSpan={2}>
-                        <paragraph>Cell 2,2</paragraph>
+                        <paragraph>Col 2, Row 0</paragraph>
                     </table_cell>
                 </table_row>
                 <table_row>
                     <table_cell>
-                        <paragraph>Cell 3,0</paragraph>
+                        <paragraph>Col 0, Row 1</paragraph>
+                    </table_cell>
+                    <table_cell key="anchor">
+                        <paragraph>Col 1, Row 1</paragraph>
                     </table_cell>
                     <table_cell>
-                        <paragraph>Cell 3,1</paragraph>
+                        <paragraph>Col 2, Row 1</paragraph>
+                    </table_cell>
+                </table_row>
+                <table_row>
+                    <table_cell>
+                        <paragraph>Col 0, Row 2</paragraph>
+                    </table_cell>
+                    <table_cell>
+                        <paragraph>Col 1, Row 2</paragraph>
+                    </table_cell>
+                    <table_cell>
+                        <paragraph>Col 2, Row 2</paragraph>
                     </table_cell>
                 </table_row>
             </table>

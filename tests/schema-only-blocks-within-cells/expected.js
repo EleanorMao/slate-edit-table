@@ -2,10 +2,27 @@
 /* eslint-disable react/void-dom-elements-no-children */
 import hyperscript from '../hyperscript';
 
+const info = [];
+const rowNums = 1;
+const colNums = 3;
+for (let i = 0; i < rowNums; i += 1) {
+    const rowInfo = [];
+    for (let j = 0; j < colNums; j += 1) {
+        rowInfo.push({
+            cellIndex: j,
+            colIndex: j,
+            colSpan: 1,
+            rowIndex: i,
+            rowSpan: 1
+        });
+    }
+    info.push(rowInfo);
+}
+
 export default (
     <value>
         <document>
-            <table>
+            <table info={info}>
                 <table_row>
                     <table_cell>
                         <paragraph>Row 1, Col 1</paragraph>

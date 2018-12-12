@@ -124,7 +124,7 @@ class Example extends React.Component<*, *> {
                 <button
                     onMouseDown={this.onMergeDown}
                     disabled={
-                        !tablePlugin.utils.canCellMergeDown(this.state.value)
+                        !tablePlugin.utils.couldCellMergeDown(this.state.value)
                     }
                 >
                     Merge Down
@@ -132,7 +132,7 @@ class Example extends React.Component<*, *> {
                 <button
                     onMouseDown={this.onMergeRight}
                     disabled={
-                        !tablePlugin.utils.canCellMergeRight(this.state.value)
+                        !tablePlugin.utils.couldCellMergeRight(this.state.value)
                     }
                 >
                     Merge Right

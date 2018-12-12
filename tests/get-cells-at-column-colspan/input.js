@@ -1,25 +1,30 @@
-/** @jsx h */
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { createHyperscript } from '@gitbook/slate-hyperscript';
+/** @jsx hyperscript */
+import hyperscript from '../hyperscript';
 
-const h = createHyperscript({
-    blocks: {
-        heading: 'heading',
-        paragraph: 'paragraph',
-        table: 'table',
-        table_row: 'table_row',
-        table_cell: 'table_cell'
+const info = [];
+const rowNums = 3;
+const colNums = 3;
+for (let i = 0; i < rowNums; i += 1) {
+    const rowInfo = [];
+    for (let j = 0; j < colNums; j += 1) {
+        rowInfo.push({
+            cellIndex: j,
+            colIndex: j,
+            colSpan: 1,
+            rowIndex: i,
+            rowSpan: 1
+        });
     }
-});
+    info.push(rowInfo);
+}
+
+info[0][0].colSpan = 2;
+info[0][1] = { ...info[0][0] };
 
 export default (
     <value>
         <document>
-            <heading>Slate + Table Edition</heading>
-            <paragraph>
-                This page is a basic example of Slate + slate-edit-table plugin.
-            </paragraph>
-            <table>
+            <table info={info}>
                 <table_row>
                     <table_cell colSpan={2}>
                         <paragraph>Col 0, Row 0</paragraph>
@@ -51,10 +56,6 @@ export default (
                     </table_cell>
                 </table_row>
             </table>
-            <paragraph>
-                Use Tab and Shift+Tab to move from cell to cells. Press Enter to
-                go to next row. Press Up/Down to navigate the rows.
-            </paragraph>
         </document>
     </value>
 );
